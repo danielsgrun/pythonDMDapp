@@ -1,0 +1,9 @@
+scikit_image==0.17.2
+pyueye==4.90.0.0
+tqdm==4.50.2
+aotools==1.0.4
+numpy==1.19.2
+statsmodels==0.12.0
+scipy==1.5.2
+matplotlib==3.3.2
+skimage==0.0
