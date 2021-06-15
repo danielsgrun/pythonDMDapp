@@ -347,7 +347,7 @@ def move_bars(v, act_time,
 # ----------------------------------------------------------------------------
 
 
-def impurity(radius, omega, act_time, 
+def impurity(diameter, omega, act_time, 
                 cx = 0.2, cy = 0,
                 use_phase_map = True,
                 use_int_map = False,
@@ -357,8 +357,8 @@ def impurity(radius, omega, act_time,
 
     Parameters
     ----------
-    radius : int, float
-        Desired radius (in micron!) for the impurity circulation.
+    diameter : int, float
+        Desired diameter (in micron!) for the impurity circulation.
     omega : int, float
         Desired angular velocity (in rad/s !) for the impurity.
     act_time : int
@@ -409,7 +409,7 @@ def impurity(radius, omega, act_time,
           int(ysize/2)]
   
 
-  amp = (radius + 3.309)/(5.987) # based on fitting
+  amp = (diameter + 3.309)/(5.987) # based on fitting
   
   
   dt = int(2 * np.pi / (num_img * omega) * 1e6)
@@ -475,7 +475,7 @@ def impurity(radius, omega, act_time,
       plt.figure()
       plt.imshow(figuras[i, :,:].T, cmap='inferno')
       plt.contourf(z.T, np.arange(0,50,5), cmap='bone', alpha=0.5)
-      plt.title('Radius = {0:3.2f} micron'.format(radius))
+      plt.title('Diameter = {0:3.2f} micron'.format(diameter))
       plt.savefig('Impurity_{0:03d}.png'.format(i))
       
     ccd.close_ccd() 
